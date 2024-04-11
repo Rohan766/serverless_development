@@ -1,0 +1,22 @@
+paths:
+  /products:
+    get:
+      summary: Get all products
+      responses:
+        200:
+          description: OK
+    post:
+      summary: Create a new product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: number
+      responses:
+        201:
+          description: Created

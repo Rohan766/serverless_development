@@ -1,0 +1,22 @@
+paths:
+  /users:
+    get:
+      summary: Get all users
+      responses:
+        200:
+          description: OK
+    post:
+      summary: Create a new user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+      responses:
+        201:
+          description: Created

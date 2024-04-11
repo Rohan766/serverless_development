@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Serverless Backend for Globalization Partners LLC
+
+Resources:
+  GetAllUsersFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: src/handlers/users.handler.getAllUsers
+      Runtime: nodejs14.x
+      Events:
+        GetAllUsersApi:
+          Type: Api
+          Properties:
+            Path: /users
+            Method: get
+  CreateUserFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: src/handlers/users.handler.createUser
+      Runtime: nodejs14.x
+      Events:
+        CreateUserApi:
+          Type: Api
+          Properties:
+            Path: /users
+            Method: post
+  GetAllProductsFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: src/handlers/products.handler.getAllProducts
+      Runtime: nodejs14.x
+      Events:
+        GetAllProductsApi:
+          Type: Api
+          Properties:
+            Path: /products
+            Method: get
+  CreateProductFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: src/handlers/products.handler.createProduct
+      Runtime: nodejs14.x
+      Events:
+        CreateProductApi:
+          Type: Api
+          Properties:
+            Path: /products
+            Method: post
