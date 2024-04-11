@@ -2,8 +2,8 @@ import { APIGatewayProxyHandler } from 'aws-lambda';
 import AWS from 'aws-sdk';
 import { v4 as uuidv4 } from 'uuid';
 
-// Configure AWS SDK with credentials and region
-AWS.config.update({ region: process.env.region , credentials: { accessKeyId: 'process.env.accessKeyId', secretAccessKey: 'process.env.secretAccessKey' } });
+// Configure AWS SDK
+AWS.config.update({ region: process.env.region , credentials: { accessKeyId: process.env.accessKeyId, secretAccessKey: process.env.secretAccessKey } });
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 const TABLE_NAME = process.env.productTableName;
